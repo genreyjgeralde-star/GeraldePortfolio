@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genrey J. Geralde | Portfolio</title>
+    <!-- Pure CSS version - all styles converted from Tailwind & custom classes -->
+    <style>
+        /* ---------- RESET & BASE ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: black;
+        }
+
+        body {
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            background: black;
+            overflow-x: auto;
+        }
+
+        /* Main wrapper - exact match to original dimensions */
+        .main-wrapper {
+            background: black;
+            width: 1440px;
+            min-height: 4136px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* ---------- TYPOGRAPHY & UTILITIES ---------- */
+        .font-bricolage {
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+        }
+
+        .font-extrabold {
+            font-weight: 800;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .text-purple {
+            color: #794dff;
+        }
+
+        .text-purple-light {
+            color: #855ef8;
+        }
+
+        /* ---------- NAVIGATION BUTTONS ---------- */
+        .nav-btn {
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.15s ease;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 500;
+            color: black;
+            font-size: 16px;
+            letter-spacing: 0;
+            white-space: nowrap;
+            position: absolute;
+        }
+
+        .nav-btn:hover {
+            opacity: 0.7;
+            transform: translateY(-1px);
+        }
+
+        .nav-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* ---------- BACK BUTTON (purple rectangle) ---------- */
+        .back-rectangle {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 110px;
+            height: 42px;
+            background: linear-gradient(90deg, rgba(133, 95, 249, 1) 0%, rgba(122, 77, 255, 1) 100%);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 30;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-rectangle:hover {
+            opacity: 0.85;
+            transform: scale(0.96);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .back-rectangle:active {
+            transform: scale(0.93);
+        }
+
+        .back-text {
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: white;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---------- SECTION DIVIDER (purple gradient bar) ---------- */
+        .section-divider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, rgba(133, 95, 249, 1) 0%, rgba(122, 77, 255, 1) 100%);
+            z-index: 20;
+        }
+
+        /* section relative container */
+        .section-relative {
+            position: relative;
+        }
+
+        /* ---------- HOME SECTION ---------- */
+        .section-home {
+            position: absolute;
+            top: 88px;
+            left: 0;
+            width: 1440px;
+            height: 557px;
+        }
+
+        .home-text {
+            position: absolute;
+            top: 103px;
+            left: 312px;
+            width: 434px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 500;
+            font-size: 25px;
+            color: white;
+            line-height: normal;
+        }
+
+        .home-text .highlight {
+            font-weight: 800;
+            color: #855ef8;
+            font-size: 36px;
+        }
+
+        .home-text .purple-text {
+            color: #794dff;
+            font-weight: 500;
+        }
+
+        /* Images in home */
+        .star-2 {
+            position: absolute;
+            top: 74px;
+            left: 857px;
+            width: 330px;
+            height: 328px;
+        }
+
+        .star-3 {
+            position: absolute;
+            top: 24px;
+            left: 807px;
+            width: 430px;
+            height: 428px;
+        }
+
+        /* ---------- NAVBAR (gray pill backgrounds) ---------- */
+        .nav-bg-1 {
+            position: absolute;
+            top: 35px;
+            left: 695px;
+            width: 103px;
+            height: 45px;
+            background: #d9d9d9;
+            border-radius: 50px;
+        }
+
+        .nav-bg-2 {
+            position: absolute;
+            top: 35px;
+            left: 804px;
+            width: 103px;
+            height: 45px;
+            background: #d9d9d9;
+            border-radius: 50px;
+        }
+
+        .nav-bg-3 {
+            position: absolute;
+            top: 35px;
+            left: 913px;
+            width: 124px;
+            height: 45px;
+            background: #d9d9d9;
+            border-radius: 50px;
+        }
+
+        .nav-bg-4 {
+            position: absolute;
+            top: 35px;
+            left: 1043px;
+            width: 118px;
+            height: 45px;
+            background: #d9d9d9;
+            border-radius: 50px;
+        }
+
+        .nav-bg-5 {
+            position: absolute;
+            top: 35px;
+            left: 1167px;
+            width: 130px;
+            height: 45px;
+            background: #d9d9d9;
+            border-radius: 50px;
+        }
+
+        /* nav labels positions */
+        .nav-home {
+            top: 52px;
+            left: 721px;
+        }
+
+        .nav-about {
+            top: 52px;
+            left: 830px;
+        }
+
+        .nav-contacts {
+            top: 52px;
+            left: 931px;
+        }
+
+        .nav-services {
+            top: 52px;
+            left: 1065px;
+        }
+
+        .nav-achievements {
+            top: 52px;
+            left: 1171px;
+        }
+
+        /* Logo + star */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: absolute;
+            top: 35px;
+            left: 286px;
+        }
+
+        .logo-star {
+            width: 28.53px;
+            height: 27.14px;
+        }
+
+        .logo-text {
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 700;
+            color: white;
+            font-size: 34px;
+            white-space: nowrap;
+        }
+
+        .profile-img-home {
+            position: absolute;
+            top: 86px;
+            left: 885px;
+            width: 274px;
+            height: 369px;
+            object-fit: cover;
+        }
+
+        /* Background ellipses & blur container */
+        .bg-ellipses {
+            position: absolute;
+            top: -221px;
+            left: -133px;
+            width: 1746px;
+            height: 701px;
+            pointer-events: none;
+        }
+
+        .ellipse-1 {
+            position: absolute;
+            top: 221px;
+            left: 133px;
+            width: 430px;
+            height: 573px;
+        }
+
+        .ellipse-4 {
+            position: absolute;
+            top: 221px;
+            left: 1172px;
+            width: 401px;
+            height: 595px;
+        }
+
+        .blur-bar {
+            position: absolute;
+            top: -3px;
+            left: 476px;
+            width: 120px;
+            height: 500px;
+            background: #855ef8;
+            border-radius: 60px / 250px;
+            transform: rotate(-30deg);
+            filter: blur(75px);
+        }
+
+        .ellipse-3 {
+            position: absolute;
+            top: 221px;
+            left: 896px;
+            width: 571px;
+            height: 433px;
+        }
+
+        /* main divider between sections */
+        .divider-bar {
+            position: absolute;
+            left: -21px;
+            width: 1461px;
+            height: 62px;
+            background: linear-gradient(90deg, rgba(133, 95, 249, 1) 0%, rgba(122, 77, 255, 1) 100%);
+        }
+
+        /* ---------- ABOUT SECTION ---------- */
+        .section-about {
+            position: absolute;
+            top: 649px;
+            left: 0;
+            width: 1440px;
+            height: 893px;
+        }
+
+        .about-title {
+            position: absolute;
+            top: 120px;
+            left: 792px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 36px;
+            white-space: nowrap;
+        }
+
+        .about-title .white {
+            color: white;
+        }
+
+        .about-title .purple {
+            color: #794dff;
+        }
+
+        .star-4 {
+            position: absolute;
+            top: 196px;
+            left: 140px;
+            width: 330px;
+            height: 328px;
+        }
+
+        .star-5 {
+            position: absolute;
+            top: 146px;
+            left: 90px;
+            width: 430px;
+            height: 428px;
+        }
+
+        .about-img {
+            position: absolute;
+            top: 120px;
+            left: 168px;
+            width: 274px;
+            height: 369px;
+            object-fit: cover;
+        }
+
+        .about-description {
+            position: absolute;
+            top: 189px;
+            left: 662px;
+            width: 609px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 500;
+            color: white;
+            font-size: 20px;
+            line-height: normal;
+        }
+
+        /* ---------- CONTACTS SECTION ---------- */
+        .section-contacts {
+            position: absolute;
+            top: 1548px;
+            left: 0;
+            width: 1440px;
+            height: 893px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .contacts-title {
+            position: absolute;
+            top: 127px;
+            left: 578px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 48px;
+            color: #794dff;
+            line-height: normal;
+        }
+
+        /* contact rows */
+        .contact-row {
+            position: absolute;
+            left: 268px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .contact-label {
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: white;
+            white-space: nowrap;
+            line-height: normal;
+        }
+
+        .contact-email .contact-label {
+            white-space: normal;
+        }
+
+        .row-fb {
+            top: 257px;
+        }
+
+        .row-phone {
+            top: 363px;
+        }
+
+        .row-email {
+            top: 435px;
+        }
+
+        .row-telegram {
+            top: 575px;
+        }
+
+        .row-ml {
+            top: 713px;
+        }
+
+        /* ---------- SERVICES SECTION ---------- */
+        .section-services {
+            position: absolute;
+            top: 2503px;
+            left: 0;
+            width: 1440px;
+            height: 1000px;
+            overflow: hidden;
+        }
+
+        .services-grid {
+            position: relative;
+            width: 1304px;
+            height: 836px;
+            margin: 0 auto;
+            padding: 88px 67px;
+            display: grid;
+            grid-template-columns: repeat(3, fit-content(100%));
+            grid-template-rows: repeat(4, fit-content(100%));
+            gap: 50px 139px;
+        }
+
+        .services-title {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            width: 244px;
+            height: 24px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 36px;
+            white-space: nowrap;
+        }
+
+        .services-title .white {
+            color: white;
+        }
+
+        .services-title .purple {
+            color: #794dff;
+        }
+
+        .service-img-1 {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+            width: 273px;
+            height: 182px;
+            object-fit: cover;
+        }
+
+        .service-img-2 {
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+            width: 243px;
+            height: 187px;
+            object-fit: cover;
+        }
+
+        .service-img-3 {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            width: 221px;
+            height: 178px;
+            object-fit: cover;
+        }
+
+        .service-head-1 {
+            grid-row: 3 / 4;
+            grid-column: 1 / 2;
+            width: 323px;
+            height: 21px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            color: #855ef8;
+            -webkit-text-stroke: 1px #855ef8;
+            white-space: nowrap;
+        }
+
+        .service-head-2 {
+            grid-row: 3 / 4;
+            grid-column: 2 / 3;
+            width: 262px;
+            height: 21px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            color: #855ef8;
+            -webkit-text-stroke: 1px #855ef8;
+            white-space: nowrap;
+        }
+
+        .service-head-3 {
+            grid-row: 3 / 4;
+            grid-column: 3 / 4;
+            width: 145px;
+            height: 21px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 32px;
+            color: #855ef8;
+            -webkit-text-stroke: 1px #855ef8;
+            white-space: nowrap;
+        }
+
+        .service-desc-1 {
+            grid-row: 4 / 5;
+            grid-column: 1 / 2;
+            width: 358px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            line-height: normal;
+        }
+
+        .service-desc-2 {
+            grid-row: 4 / 5;
+            grid-column: 2 / 3;
+            width: 358px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            line-height: normal;
+        }
+
+        .service-desc-3 {
+            grid-row: 4 / 5;
+            grid-column: 3 / 4;
+            width: 358px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            line-height: normal;
+        }
+
+        /* special back button for services grid inner */
+        .back-rectangle-services {
+            position: absolute;
+            bottom: 100px;
+            left: 20px;
+            width: 110px;
+            height: 42px;
+            background: linear-gradient(90deg, rgba(133, 95, 249, 1) 0%, rgba(122, 77, 255, 1) 100%);
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 30;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .back-rectangle-services:hover {
+            opacity: 0.85;
+            transform: scale(0.96);
+        }
+
+        /* ---------- ACHIEVEMENTS SECTION ---------- */
+        .section-achievements {
+            position: absolute;
+            top: 3367px;
+            left: 0;
+            width: 1440px;
+            height: 792px;
+            background: black;
+        }
+
+        .achievements-grid {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 88px 67px;
+            display: grid;
+            grid-template-columns: repeat(3, fit-content(100%));
+            grid-template-rows: repeat(4, fit-content(100%));
+            gap: 50px 139px;
+        }
+
+        .achievements-title {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            width: 354px;
+            height: 24px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 36px;
+            white-space: nowrap;
+        }
+
+        .achievements-title .white {
+            color: white;
+        }
+
+        .achievements-title .purple {
+            color: #724ae7;
+        }
+
+        .achievement-head-1 {
+            grid-row: 3 / 4;
+            grid-column: 1 / 2;
+            width: 249px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: #855ef8;
+            -webkit-text-stroke: 1px #855ef8;
+            white-space: nowrap;
+        }
+
+        .achievement-head-2 {
+            grid-row: 3 / 4;
+            grid-column: 2 / 3;
+            width: 220px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: #855ef8;
+            -webkit-text-stroke: 1px #855ef8;
+            white-space: nowrap;
+        }
+
+        .achievement-head-3 {
+            grid-row: 3 / 4;
+            grid-column: 3 / 4;
+            width: 176px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: #855ef8;
+            -webkit-text-stroke: 1px #855ef8;
+            white-space: nowrap;
+        }
+
+        .achievement-desc-1 {
+            grid-row: 4 / 5;
+            grid-column: 1 / 2;
+            width: 358px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            line-height: normal;
+        }
+
+        .achievement-desc-2 {
+            grid-row: 4 / 5;
+            grid-column: 2 / 3;
+            width: 358px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            line-height: normal;
+        }
+
+        .achievement-desc-3 {
+            grid-row: 4 / 5;
+            grid-column: 3 / 4;
+            width: 358px;
+            font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            line-height: normal;
+        }
+
+        .achieve-img-1 {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            width: 333px;
+            height: 182px;
+            object-fit: cover;
+            justify-self: start;
+            align-self: start;
+        }
+
+        .achieve-img-2 {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+            width: 334px;
+            height: 182px;
+            object-fit: cover;
+            justify-self: start;
+            align-self: start;
+        }
+
+        .achieve-img-3 {
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+            width: 334px;
+            height: 182px;
+            object-fit: cover;
+            justify-self: start;
+            align-self: start;
+        }
+
+        .back-rectangle-achievements {
+            position: absolute;
+            bottom: 50px;
+            left: 30px;
+            width: 110px;
+            height: 42px;
+            background: linear-gradient(90deg, rgba(133, 95, 249, 1) 0%, rgba(122, 77, 255, 1) 100%);
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 30;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+        }
+
+        .back-rectangle-achievements:hover {
+            opacity: 0.85;
+            transform: scale(0.96);
+        }
+
+        /* ensure images are displayed */
+        img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+
+    <!-- Background shapes (ellipses + blur) -->
+    <div class="bg-ellipses">
+        <img class="ellipse-1" src="img/ellipse-1.svg" alt="">
+        <img class="ellipse-4" src="img/ellipse-4.svg" alt="">
+        <div class="blur-bar"></div>
+        <img class="ellipse-3" src="img/ellipse-3.svg" alt="">
+    </div>
+
+    <!-- HOME SECTION -->
+    <div id="section-home" class="section-home section-relative">
+        <div class="home-text">
+            HI! I'M <span class="highlight">GENREY J. GERALDE<br/><br/></span>
+            I AM A SECOND-YEAR COLLEGE STUDENT CURRENTLY ENROLLED AT OPOL COMMUNITY COLLEGE, TAKING UP AN 
+            <span class="purple-text">INFORMATION</span> 
+            <span class="purple-text">TECHNOLOGY PROGRAM</span>
+        </div>
+        <img class="star-2" src="img/star-2.svg" alt="">
+        <img class="star-3" src="img/star-3.svg" alt="">
+        <img class="profile-img-home" src="img/image-1.png" alt="Profile">
+    </div>
+
+    <!-- NAVBAR BACKGROUNDS -->
+    <div class="nav-bg-1"></div><div class="nav-bg-2"></div><div class="nav-bg-3"></div>
+    <div class="nav-bg-4"></div><div class="nav-bg-5"></div>
+
+    <!-- NAV LABELS -->
+    <div onclick="scrollToSection('section-home')" class="nav-btn nav-home">HOME</div>
+    <div onclick="scrollToSection('section-about')" class="nav-btn nav-about">ABOUT</div>
+    <div onclick="scrollToSection('section-contacts')" class="nav-btn nav-contacts">CONTACTS</div>
+    <div onclick="scrollToSection('section-services')" class="nav-btn nav-services">SERVICES</div>
+    <div onclick="scrollToSection('section-achievements')" class="nav-btn nav-achievements">ACHIEVEMENTS</div>
+
+    <!-- LOGO -->
+    <div class="logo-area">
+        <img class="logo-star" src="img/star-1.svg" alt="star">
+        <div class="logo-text">Genrey.</div>
+    </div>
+
+    <!-- DIVIDER AFTER HOME -->
+    <div class="divider-bar" style="top: 645px;"></div>
+
+    <!-- ABOUT SECTION -->
+    <div id="section-about" class="section-about section-relative">
+        <div class="section-divider"></div>
+        <div onclick="backToHome()" class="back-rectangle"><span class="back-text">← BACK</span></div>
+        <div class="about-title"><span class="white">ABOUT </span><span class="purple">ME</span></div>
+        <img class="star-4" src="img/star-4.svg" alt="">
+        <img class="star-5" src="img/star-5.svg" alt="">
+        <img class="about-img" src="img/image-2.png" alt="About">
+        <div class="about-description">
+            I HAVE A GROWING INTEREST IN TECHNOLOGY AND ENJOY LEARNING HOW SYSTEMS, WEBSITES, AND APPLICATIONS ARE BUILT AND IMPROVED.<br/>THROUGHOUT MY STUDIES, I HAVE BEEN DEVELOPING MY SKILLS IN AREAS SUCH AS PROGRAMMING, WEB DEVELOPMENT, AND BASIC TROUBLESHOOTING. I AM EAGER TO EXPAND MY KNOWLEDGE, TAKE ON NEW CHALLENGES, AND GAIN HANDS-ON EXPERIENCE THAT WILL PREPARE ME FOR A FUTURE CAREER IN THE TECH INDUSTRY.
+        </div>
+    </div>
+
+    <!-- DIVIDER AFTER ABOUT -->
+    <div class="divider-bar" style="top: 1542px; left: -11px;"></div>
+
+    <!-- CONTACTS SECTION -->
+    <div id="section-contacts" class="section-contacts section-relative">
+        <div class="section-divider"></div>
+        <div onclick="backToHome()" class="back-rectangle"><span class="back-text">← BACK</span></div>
+        <div class="contacts-title">CONTACTS</div>
+
+        <div class="contact-row row-fb">
+            <img src="public/image106316-uh6e-200h.png" alt="fb" class="contact-icon">
+            <span class="contact-label">FB ACCOUNT: genrey j geralde</span>
+        </div>
+        <div class="contact-row row-phone">
+            <img src="public/image116319-kfi-200h.png" alt="contact" class="contact-icon">
+            <span class="contact-label">CONTACT NO. 09354592018</span>
+        </div>
+        <div class="contact-row row-email">
+            <img src="public/image126322-sfm-200h.png" alt="email" class="contact-icon">
+            <span class="contact-label">eMAIL: genreyjgeralde@gmail.com</span>
+        </div>
+        <div class="contact-row row-telegram">
+            <img src="public/image136325-mxhq-200h.png" alt="telegram" class="contact-icon">
+            <span class="contact-label">TELEGRAM: genrey geralde</span>
+        </div>
+        <div class="contact-row row-ml">
+            <img src="public/image146328-7b7-200h.png" alt="ML" class="contact-icon">
+            <span class="contact-label">ML ACCOUNT: (bontog) sa suba.!!</span>
+        </div>
+    </div>
+
+    <!-- DIVIDER AFTER CONTACTS -->
+    <div class="divider-bar" style="top: 2441px; left: -11px;"></div>
+
+    <!-- SERVICES SECTION -->
+    <div id="section-services" class="section-services section-relative">
+        <div class="section-divider"></div>
+        <div class="services-grid">
+            <div onclick="backToHome()" class="back-rectangle-services"><span class="back-text">← BACK</span></div>
+            <div class="services-title"><span class="white">MY </span><span class="purple">SERVICES</span></div>
+            <img class="service-img-1" src="img/image-8.png" alt="web design">
+            <img class="service-img-2" src="img/image-9.png" alt="pc build">
+            <img class="service-img-3" src="img/image-7.png" alt="digital marketing">
+            <div class="service-head-1">DIGITAL MARKETING</div>
+            <div class="service-head-2">WEB DESIGNING</div>
+            <div class="service-head-3">PC BUILD</div>
+            <div class="service-desc-1">I Deliver Customized Digital Marketing Solutions That Help Businesses Connect With Their Audience And Grow Their Presence Online. Our Service Is Designed To Build Brand Credibility, Improve Engagement, And Generate Real Results Through Strategic Planning And Execution.</div>
+            <div class="service-desc-2">I Offer Creative And Professional Web Designing Services Focused On Building Visually Appealing And User-friendly Websites. Our Goal Is To Design Layouts That Not Only Look Modern But Also Provide A Smooth And Enjoyable Browsing Experience For Users.</div>
+            <div class="service-desc-3">We Provide Professional Pc Building Services That Focus On Creating Reliable, High-performance Computer Systems Tailored To Your Needs. Whether For Gaming, School, Office Work, Or Content Creation, We Design Setups That Match Your Budget And Purpose.</div>
+        </div>
+    </div>
+
+    <!-- DIVIDER AFTER SERVICES -->
+    <div class="divider-bar" style="top: 3305px; left: -11px;"></div>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <div id="section-achievements" class="section-achievements section-relative">
+        <div class="section-divider"></div>
+        <div class="achievements-grid">
+            <div onclick="backToHome()" class="back-rectangle-achievements"><span class="back-text">← BACK</span></div>
+            <div class="achievements-title"><span class="white">MY </span><span class="purple">ACHIEVEMENTS</span></div>
+            <div class="achievement-head-1">SEMICOLON HUNTER</div>
+            <div class="achievement-head-2">LOGIC WHISPERER</div>
+            <div class="achievement-head-3">GIT HISTORIAN</div>
+            <div class="achievement-desc-1">Successfully Navigated The "five Stages Of Debugging" To Resolve A Critical Logic Error. This Achievement Was Unlocked After Forty-five Minutes Of Intense Troubleshooting, Only To Discover That The Culprit Was A Single Missing Semicolon. It Stands As A Testament To My Persistence And Attention To Detail.</div>
+            <div class="achievement-desc-2">Mastered The Art Of Rubber Duck Debugging By Explaining Complex Algorithms Out Loud Until The Solution Became Clear. This Achievement Highlights My Ability To Break Down Technical Hurdles Into Simple, Verbalized Logic To Solve Deep-rooted Issues.</div>
+            <div class="achievement-desc-3">Maintained A Rigorous Git History, Documenting The Transition From Professional Feature Logs To Late-night Emergency Fixes. This Achievement Reflects My Commitment To The Development Lifecycle And The Reality Of Iterative, Fast-paced Project Management.</div>
+            <img class="achieve-img-1" src="img/gemini-generated-image-b6b7g5b6b7g5b6b7-1.png" alt="achievement1">
+            <img class="achieve-img-2" src="img/gemini-generated-image-uy7xhmuy7xhmuy7x-1.png" alt="achievement2">
+            <img class="achieve-img-3" src="img/gemini-generated-image-j17e7fj17e7fj17e-1.png" alt="achievement3">
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const top = el.getBoundingClientRect().top + window.scrollY - 30;
+        window.scrollTo({ top, behavior: 'smooth' });
+    }
+
+    function backToHome() {
+        const homeSection = document.getElementById('section-home');
+        if (homeSection) {
+            const top = homeSection.getBoundingClientRect().top + window.scrollY - 30;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,601 @@
+/* =============================================
+   GENREY J. GERALDE — Portfolio Stylesheet
+   Converted from Tailwind to pure CSS
+   ============================================= */
+
+/* ─── Reset / Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* ─── Root wrapper ─── */
+.portfolio-wrapper {
+  position: relative;
+  width: 100%;
+  min-width: 1440px;
+  min-height: 4036px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* =============================================
+   NAV BUTTON (shared hover/active)
+   ============================================= */
+.nav-btn {
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.nav-btn:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+
+.nav-btn:active {
+  transform: scale(0.96);
+}
+
+/* =============================================
+   BACK BUTTON — purple pill, lower-left
+   ============================================= */
+.back-rectangle {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 110px;
+  height: 42px;
+  background: linear-gradient(90deg, #855ef8 0%, #7a4dff 100%);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.back-rectangle:hover {
+  opacity: 0.85;
+  transform: scale(0.96);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.back-rectangle:active {
+  transform: scale(0.93);
+}
+
+.back-text {
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* =============================================
+   SECTION DIVIDER — purple bar at section top
+   ============================================= */
+.section-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #855ef8 0%, #7a4dff 100%);
+  z-index: 20;
+}
+
+/* Sections need position:relative to contain the divider */
+.section-relative {
+  position: relative;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+/* pill backgrounds */
+.nav-pill-home       { position: absolute; top: 35px; left: 695px;  width: 103px; height: 45px; background: #d9d9d9; border-radius: 50px; }
+.nav-pill-about      { position: absolute; top: 35px; left: 804px;  width: 103px; height: 45px; background: #d9d9d9; border-radius: 50px; }
+.nav-pill-contacts   { position: absolute; top: 35px; left: 913px;  width: 124px; height: 45px; background: #d9d9d9; border-radius: 50px; }
+.nav-pill-services   { position: absolute; top: 35px; left: 1043px; width: 118px; height: 45px; background: #d9d9d9; border-radius: 50px; }
+.nav-pill-achieve    { position: absolute; top: 35px; left: 1167px; width: 130px; height: 45px; background: #d9d9d9; border-radius: 50px; }
+
+/* nav labels */
+.nav-label {
+  position: absolute;
+  top: 52px;
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+  white-space: nowrap;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.nav-label-home     { left: 721px;  }
+.nav-label-about    { left: 830px;  }
+.nav-label-contacts { left: 931px;  }
+.nav-label-services { left: 1065px; }
+.nav-label-achieve  { left: 1171px; }
+
+/* logo / brand */
+.brand-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 35px;
+  left: 286px;
+}
+
+.brand-star {
+  position: relative;
+  width: 28.53px;
+  height: 27.14px;
+}
+
+.brand-name {
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  color: #fff;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* =============================================
+   BACKGROUND DECORATIVE LAYER
+   ============================================= */
+.bg-deco-layer {
+  position: absolute;
+  top: -221px;
+  left: -133px;
+  width: 1746px;
+  height: 701px;
+}
+
+.bg-ellipse-1 {
+  position: absolute;
+  top: 221px;
+  left: 133px;
+  width: 430px;
+  height: 573px;
+}
+
+.bg-ellipse-4 {
+  position: absolute;
+  top: 221px;
+  left: 1172px;
+  width: 401px;
+  height: 595px;
+}
+
+.bg-glow {
+  position: absolute;
+  top: -3px;
+  left: 476px;
+  width: 120px;
+  height: 500px;
+  background: #855ef8;
+  border-radius: 60px / 250px;
+  transform: rotate(-30deg);
+  filter: blur(75px);
+}
+
+.bg-ellipse-3 {
+  position: absolute;
+  top: 221px;
+  left: 896px;
+  width: 571px;
+  height: 433px;
+}
+
+/* =============================================
+   HOME SECTION
+   ============================================= */
+.section-home {
+  position: absolute;
+  top: 88px;
+  left: 0;
+  width: 1440px;
+  height: 557px;
+}
+
+.home-intro-text {
+  position: absolute;
+  top: 103px;
+  left: 312px;
+  width: 434px;
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  color: transparent;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* inline spans inside home intro */
+.home-intro-text .txt-white     { font-weight: 500; color: #fff; }
+.home-intro-text .txt-name      { font-family: 'Bricolage Grotesque', Helvetica, sans-serif; font-weight: 800; color: #855ef8; font-size: 36px; }
+.home-intro-text .txt-purple    { font-weight: 500; color: #794dff; }
+.home-intro-text .txt-spacer    { font-weight: 500; color: #fff; font-size: 36px; }
+
+.home-star-2 {
+  position: absolute;
+  top: 74px;
+  left: 857px;
+  width: 330px;
+  height: 328px;
+}
+
+.home-star-3 {
+  position: absolute;
+  top: 24px;
+  left: 807px;
+  width: 430px;
+  height: 428px;
+}
+
+.home-photo {
+  position: absolute;
+  top: 86px;
+  left: 885px;
+  width: 274px;
+  height: 369px;
+  aspect-ratio: 0.74;
+  object-fit: cover;
+}
+
+/* =============================================
+   HORIZONTAL DIVIDERS (full-width purple bars)
+   ============================================= */
+.divider-after-home {
+  position: absolute;
+  top: 645px;
+  left: -21px;
+  width: 1461px;
+  height: 62px;
+  background: linear-gradient(90deg, #855ef8 0%, #7a4dff 100%);
+}
+
+.divider-after-about {
+  position: absolute;
+  top: 1542px;
+  left: -11px;
+  width: 1461px;
+  height: 62px;
+  background: linear-gradient(90deg, #855ef8 0%, #7a4dff 100%);
+}
+
+.divider-after-contacts {
+  position: absolute;
+  top: 2441px;
+  left: -11px;
+  width: 1461px;
+  height: 62px;
+  background: linear-gradient(90deg, #855ef8 0%, #7a4dff 100%);
+}
+
+.divider-after-services {
+  position: absolute;
+  top: 3205px;
+  left: -11px;
+  width: 1461px;
+  height: 62px;
+  background: linear-gradient(90deg, #855ef8 0%, #7a4dff 100%);
+}
+
+/* =============================================
+   ABOUT SECTION
+   ============================================= */
+.section-about {
+  position: absolute;
+  top: 649px;
+  left: 0;
+  width: 1440px;
+  height: 893px;
+}
+
+.about-title {
+  position: absolute;
+  top: 120px;
+  left: 792px;
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: transparent;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.about-title .txt-white  { color: #fff; }
+.about-title .txt-purple { color: #794dff; }
+
+.about-star-4 {
+  position: absolute;
+  top: 196px;
+  left: 140px;
+  width: 330px;
+  height: 328px;
+}
+
+.about-star-5 {
+  position: absolute;
+  top: 146px;
+  left: 90px;
+  width: 430px;
+  height: 428px;
+}
+
+.about-photo {
+  position: absolute;
+  top: 120px;
+  left: 168px;
+  width: 274px;
+  height: 369px;
+  aspect-ratio: 0.74;
+  object-fit: cover;
+}
+
+.about-body {
+  position: absolute;
+  top: 189px;
+  left: 662px;
+  width: 609px;
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* =============================================
+   CONTACTS SECTION
+   ============================================= */
+.section-contacts {
+  position: absolute;
+  top: 1548px;
+  left: 0;
+  width: 1440px;
+  height: 893px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.contacts-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.contacts-title {
+  position: absolute;
+  top: 127px;
+  left: 578px;
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  color: #794dff;
+  line-height: normal;
+}
+
+/* contact row shared */
+.contact-row {
+  position: absolute;
+  left: 268px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-row img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.contact-row span {
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: #fff;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.contact-fb       { top: 257px; }
+.contact-phone    { top: 363px; }
+.contact-email    { top: 435px; }
+.contact-telegram { top: 575px; }
+.contact-ml       { top: 713px; }
+
+/* =============================================
+   SERVICES SECTION
+   ============================================= */
+.section-services {
+  position: absolute;
+  top: 2503px;
+  left: 0;
+  width: 1440px;
+  height: 702px;
+  overflow: hidden;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, fit-content(100%));
+  grid-template-rows: repeat(4, fit-content(100%));
+  width: 1304px;
+  height: 702px;
+  gap: 50px 139px;
+  padding: 88px 67px;
+  position: relative;
+}
+
+/* Override back-button position for Services — push lower so it clears the grid */
+.section-services .back-rectangle {
+  bottom: -60px;  /* sits below the section content */
+  left: 20px;
+}
+
+.services-title {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  width: 244px;
+  height: 24px;
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: transparent;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.services-title .txt-white  { color: #fff; }
+.services-title .txt-purple { color: #794dff; }
+
+/* service images */
+.services-img-dm   { grid-row: 2/3; grid-column: 1/2; position: relative; width: 221px; height: 178px; aspect-ratio: 1.24; }
+.services-img-wd   { grid-row: 2/3; grid-column: 2/3; position: relative; width: 273px; height: 182px; aspect-ratio: 1.5;  object-fit: cover; }
+.services-img-pc   { grid-row: 2/3; grid-column: 3/4; position: relative; width: 243px; height: 187px; aspect-ratio: 1.76; object-fit: cover; }
+
+/* service labels */
+.services-label {
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: #855ef8;
+  -webkit-text-stroke: 1px #855ef8;
+  white-space: nowrap;
+  height: 21px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.services-label-dm { grid-row: 3/4; grid-column: 1/2; width: 323px; }
+.services-label-wd { grid-row: 3/4; grid-column: 2/3; width: 262px; }
+.services-label-pc { grid-row: 3/4; grid-column: 3/4; width: 145px; }
+
+/* service descriptions */
+.services-desc {
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #fff;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.services-desc-dm { grid-row: 4/5; grid-column: 1/2; width: 358px; height: 144px; }
+.services-desc-wd { grid-row: 4/5; grid-column: 2/3; width: 358px; height: 144px; }
+.services-desc-pc { grid-row: 4/5; grid-column: 3/4; width: 358px; height: 133px; }
+
+/* =============================================
+   ACHIEVEMENTS SECTION
+   ============================================= */
+.section-achievements {
+  position: absolute;
+  top: 3267px;
+  left: 0;
+  width: 1440px;
+  height: 692px;
+  background-color: #000;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, fit-content(100%));
+  grid-template-rows: repeat(4, fit-content(100%));
+  width: 100%;
+  height: 100%;
+  gap: 50px 139px;
+  padding: 88px 67px;
+  position: relative;
+}
+
+/* Override back-button position for Achievements — push below grid content */
+.section-achievements .back-rectangle {
+  bottom: -65px;
+  left: 30px;
+}
+
+.achievements-title {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  width: 354px;
+  height: 24px;
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: transparent;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.achievements-title .txt-white  { color: #fff; }
+.achievements-title .txt-purple { color: #724ae7; }
+
+/* achievement images */
+.achieve-img {
+  position: relative;
+  justify-self: start;
+  align-self: start;
+  width: 333px;
+  height: 182px;
+  object-fit: cover;
+}
+
+.achieve-img-1 { grid-row: 2/3; grid-column: 1/2; width: 333px; aspect-ratio: 1.83; }
+.achieve-img-2 { grid-row: 2/3; grid-column: 2/3; width: 334px; aspect-ratio: 1.83; }
+.achieve-img-3 { grid-row: 2/3; grid-column: 3/4; width: 334px; aspect-ratio: 1.83; }
+
+/* achievement labels */
+.achieve-label {
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: #855ef8;
+  -webkit-text-stroke: 1px #855ef8;
+  white-space: nowrap;
+  height: 16px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.achieve-label-1 { grid-row: 3/4; grid-column: 1/2; width: 249px; }
+.achieve-label-2 { grid-row: 3/4; grid-column: 2/3; width: 220px; }
+.achieve-label-3 { grid-row: 3/4; grid-column: 3/4; width: 176px; }
+
+/* achievement descriptions */
+.achieve-desc {
+  font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #fff;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.achieve-desc-1 { grid-row: 4/5; grid-column: 1/2; width: 358px; height: 144px; }
+.achieve-desc-2 { grid-row: 4/5; grid-column: 2/3; width: 358px; height: 144px; }
+.achieve-desc-3 { grid-row: 4/5; grid-column: 3/4; width: 358px; height: 133px; }
