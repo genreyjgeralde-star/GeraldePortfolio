@@ -1,9 +1,4 @@
-/* =============================================
-   GENREY J. GERALDE — Portfolio Stylesheet
-   Converted from Tailwind to pure CSS
-   ============================================= */
 
-/* ─── Reset / Base ─── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Root wrapper ─── */
+
 .portfolio-wrapper {
   position: relative;
   width: 100%;
@@ -29,9 +24,7 @@ body {
   overflow: hidden;
 }
 
-/* =============================================
-   NAV BUTTON (shared hover/active)
-   ============================================= */
+
 .nav-btn {
   cursor: pointer;
   transition: opacity 0.2s ease, transform 0.15s ease;
@@ -46,9 +39,7 @@ body {
   transform: scale(0.96);
 }
 
-/* =============================================
-   BACK BUTTON — purple pill, lower-left
-   ============================================= */
+
 .back-rectangle {
   position: absolute;
   bottom: 30px;
@@ -85,9 +76,7 @@ body {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* =============================================
-   SECTION DIVIDER — purple bar at section top
-   ============================================= */
+
 .section-divider {
   position: absolute;
   top: 0;
@@ -103,17 +92,14 @@ body {
   position: relative;
 }
 
-/* =============================================
-   NAVBAR
-   ============================================= */
-/* pill backgrounds */
+
 .nav-pill-home       { position: absolute; top: 35px; left: 695px;  width: 103px; height: 45px; background: #d9d9d9; border-radius: 50px; }
 .nav-pill-about      { position: absolute; top: 35px; left: 804px;  width: 103px; height: 45px; background: #d9d9d9; border-radius: 50px; }
 .nav-pill-contacts   { position: absolute; top: 35px; left: 913px;  width: 124px; height: 45px; background: #d9d9d9; border-radius: 50px; }
 .nav-pill-services   { position: absolute; top: 35px; left: 1043px; width: 118px; height: 45px; background: #d9d9d9; border-radius: 50px; }
 .nav-pill-achieve    { position: absolute; top: 35px; left: 1167px; width: 130px; height: 45px; background: #d9d9d9; border-radius: 50px; }
 
-/* nav labels */
+
 .nav-label {
   position: absolute;
   top: 52px;
@@ -132,7 +118,7 @@ body {
 .nav-label-services { left: 1065px; }
 .nav-label-achieve  { left: 1171px; }
 
-/* logo / brand */
+
 .brand-container {
   display: inline-flex;
   align-items: center;
@@ -158,9 +144,6 @@ body {
   line-height: normal;
 }
 
-/* =============================================
-   BACKGROUND DECORATIVE LAYER
-   ============================================= */
 .bg-deco-layer {
   position: absolute;
   top: -221px;
@@ -205,9 +188,7 @@ body {
   height: 433px;
 }
 
-/* =============================================
-   HOME SECTION
-   ============================================= */
+
 .section-home {
   position: absolute;
   top: 88px;
@@ -229,7 +210,7 @@ body {
   line-height: normal;
 }
 
-/* inline spans inside home intro */
+
 .home-intro-text .txt-white     { font-weight: 500; color: #fff; }
 .home-intro-text .txt-name      { font-family: 'Bricolage Grotesque', Helvetica, sans-serif; font-weight: 800; color: #855ef8; font-size: 36px; }
 .home-intro-text .txt-purple    { font-weight: 500; color: #794dff; }
@@ -261,9 +242,7 @@ body {
   object-fit: cover;
 }
 
-/* =============================================
-   HORIZONTAL DIVIDERS (full-width purple bars)
-   ============================================= */
+
 .divider-after-home {
   position: absolute;
   top: 645px;
@@ -300,9 +279,7 @@ body {
   background: linear-gradient(90deg, #855ef8 0%, #7a4dff 100%);
 }
 
-/* =============================================
-   ABOUT SECTION
-   ============================================= */
+
 .section-about {
   position: absolute;
   top: 649px;
@@ -366,9 +343,7 @@ body {
   line-height: normal;
 }
 
-/* =============================================
-   CONTACTS SECTION
-   ============================================= */
+
 .section-contacts {
   position: absolute;
   top: 1548px;
@@ -396,7 +371,7 @@ body {
   line-height: normal;
 }
 
-/* contact row shared */
+
 .contact-row {
   position: absolute;
   left: 268px;
@@ -427,9 +402,7 @@ body {
 .contact-telegram { top: 575px; }
 .contact-ml       { top: 713px; }
 
-/* =============================================
-   SERVICES SECTION
-   ============================================= */
+
 .section-services {
   position: absolute;
   top: 2503px;
