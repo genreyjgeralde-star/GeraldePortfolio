@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genrey J. Geralde | Portfolio</title>
-    <!-- Pure CSS version - all styles converted from Tailwind & custom classes -->
+
     <style>
-        /* ---------- RESET & BASE ---------- */
-        * {
+        {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -24,7 +23,7 @@
             overflow-x: auto;
         }
 
-        /* Main wrapper - exact match to original dimensions */
+       
         .main-wrapper {
             background: black;
             width: 1440px;
@@ -34,7 +33,7 @@
             overflow: hidden;
         }
 
-        /* ---------- TYPOGRAPHY & UTILITIES ---------- */
+    
         .font-bricolage {
             font-family: 'Bricolage Grotesque', Helvetica, sans-serif;
         }
@@ -59,7 +58,7 @@
             color: #855ef8;
         }
 
-        /* ---------- NAVIGATION BUTTONS ---------- */
+        
         .nav-btn {
             cursor: pointer;
             transition: opacity 0.2s ease, transform 0.15s ease;
@@ -81,7 +80,7 @@
             transform: scale(0.96);
         }
 
-        /* ---------- BACK BUTTON (purple rectangle) ---------- */
+   
         .back-rectangle {
             position: absolute;
             bottom: 30px;
@@ -118,7 +117,7 @@
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
         }
 
-        /* ---------- SECTION DIVIDER (purple gradient bar) ---------- */
+  
         .section-divider {
             position: absolute;
             top: 0;
@@ -129,12 +128,12 @@
             z-index: 20;
         }
 
-        /* section relative container */
+
         .section-relative {
             position: relative;
         }
 
-        /* ---------- HOME SECTION ---------- */
+      
         .section-home {
             position: absolute;
             top: 88px;
@@ -183,7 +182,7 @@
             height: 428px;
         }
 
-        /* ---------- NAVBAR (gray pill backgrounds) ---------- */
+    
         .nav-bg-1 {
             position: absolute;
             top: 35px;
@@ -234,7 +233,6 @@
             border-radius: 50px;
         }
 
-        /* nav labels positions */
         .nav-home {
             top: 52px;
             left: 721px;
@@ -292,7 +290,7 @@
             object-fit: cover;
         }
 
-        /* Background ellipses & blur container */
+
         .bg-ellipses {
             position: absolute;
             top: -221px;
@@ -482,7 +480,7 @@
             top: 713px;
         }
 
-        /* ---------- SERVICES SECTION ---------- */
+
         .section-services {
             position: absolute;
             top: 2503px;
@@ -619,7 +617,6 @@
             line-height: normal;
         }
 
-        /* special back button for services grid inner */
         .back-rectangle-services {
             position: absolute;
             bottom: 100px;
@@ -642,7 +639,7 @@
             transform: scale(0.96);
         }
 
-        /* ---------- ACHIEVEMENTS SECTION ---------- */
+       
         .section-achievements {
             position: absolute;
             top: 3367px;
@@ -820,7 +817,6 @@
         <img class="ellipse-3" src="img/ellipse-3.svg" alt="">
     </div>
 
-    <!-- HOME SECTION -->
     <div id="section-home" class="section-home section-relative">
         <div class="home-text">
             HI! I'M <span class="highlight">GENREY J. GERALDE<br/><br/></span>
@@ -833,27 +829,27 @@
         <img class="profile-img-home" src="img/image-1.png" alt="Profile">
     </div>
 
-    <!-- NAVBAR BACKGROUNDS -->
+
     <div class="nav-bg-1"></div><div class="nav-bg-2"></div><div class="nav-bg-3"></div>
     <div class="nav-bg-4"></div><div class="nav-bg-5"></div>
 
-    <!-- NAV LABELS -->
+
     <div onclick="scrollToSection('section-home')" class="nav-btn nav-home">HOME</div>
     <div onclick="scrollToSection('section-about')" class="nav-btn nav-about">ABOUT</div>
     <div onclick="scrollToSection('section-contacts')" class="nav-btn nav-contacts">CONTACTS</div>
     <div onclick="scrollToSection('section-services')" class="nav-btn nav-services">SERVICES</div>
     <div onclick="scrollToSection('section-achievements')" class="nav-btn nav-achievements">ACHIEVEMENTS</div>
 
-    <!-- LOGO -->
+  
     <div class="logo-area">
         <img class="logo-star" src="img/star-1.svg" alt="star">
         <div class="logo-text">Genrey.</div>
     </div>
 
-    <!-- DIVIDER AFTER HOME -->
+   
     <div class="divider-bar" style="top: 645px;"></div>
 
-    <!-- ABOUT SECTION -->
+
     <div id="section-about" class="section-about section-relative">
         <div class="section-divider"></div>
         <div onclick="backToHome()" class="back-rectangle"><span class="back-text">← BACK</span></div>
@@ -866,10 +862,9 @@
         </div>
     </div>
 
-    <!-- DIVIDER AFTER ABOUT -->
+ 
     <div class="divider-bar" style="top: 1542px; left: -11px;"></div>
 
-    <!-- CONTACTS SECTION -->
     <div id="section-contacts" class="section-contacts section-relative">
         <div class="section-divider"></div>
         <div onclick="backToHome()" class="back-rectangle"><span class="back-text">← BACK</span></div>
@@ -897,10 +892,9 @@
         </div>
     </div>
 
-    <!-- DIVIDER AFTER CONTACTS -->
     <div class="divider-bar" style="top: 2441px; left: -11px;"></div>
 
-    <!-- SERVICES SECTION -->
+   
     <div id="section-services" class="section-services section-relative">
         <div class="section-divider"></div>
         <div class="services-grid">
@@ -918,10 +912,10 @@
         </div>
     </div>
 
-    <!-- DIVIDER AFTER SERVICES -->
+  
     <div class="divider-bar" style="top: 3305px; left: -11px;"></div>
 
-    <!-- ACHIEVEMENTS SECTION -->
+  
     <div id="section-achievements" class="section-achievements section-relative">
         <div class="section-divider"></div>
         <div class="achievements-grid">
